@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:dashboard/listproduk.dart';
 
 void main() {
   runApp(MyApp());
@@ -59,8 +60,9 @@ class MenuCard extends StatelessWidget {
       color: Colors.white,
       child: InkWell(
         onTap: () {
-          _showDialog(context, menu);
-        },
+          Navigator.push(context,MaterialPageRoute(builder: (context) {
+            return ListProduk();
+          }));},
         child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -68,7 +70,7 @@ class MenuCard extends StatelessWidget {
               Padding(padding: EdgeInsets.all(5),),
               Expanded(
                   child:
-                  Image.asset(menu.icon, height: 80.0, width: 80.0, fit: BoxFit.contain,)
+                  Image.asset(menu.icon, height: 100.0, width: 100.0, fit: BoxFit.contain,)
               ),
               Text(menu.title, style: TextStyle(fontSize: 12.0)),
               Padding(padding: EdgeInsets.all(5),),
